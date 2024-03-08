@@ -7,9 +7,9 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: Rikenunes8/infragenie-tests@v0.0
+        uses: Rikenunes8/infragenie-tests@master
         with:
-          who-to-greet: 'Mona the Octocat'
+          milliseconds: 2000
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
