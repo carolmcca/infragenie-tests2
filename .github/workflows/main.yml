@@ -14,4 +14,4 @@ jobs:
         with:
           access_token: ${{ secrets.GITHUB_TOKEN }}
           host: 'https://305c-89-152-88-137.ngrok-free.app'
-          branch: commit
+          branch: test-action
