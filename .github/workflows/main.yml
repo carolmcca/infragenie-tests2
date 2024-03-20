@@ -1,15 +1,17 @@
 on: [workflow_dispatch, push]
+  
+
+permissions:
+  contents: write
 
 jobs:
-  hello_world_job:
+  update-architecture:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Update archtiecture diagram
     steps:
-      - name: Hello world action step
-        id: hello
-        uses: Rikenunes8/infragenie-tests@master
+      - name: Invoke infragenie to commit the diagram
+        uses: Rikenunes8/infragenie-ghaction@master
         with:
-          milliseconds: 2000
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+          access_token: ${{ secrets.GITHUB_TOKEN }}
+          host: 'https://305c-89-152-88-137.ngrok-free.app'
+          branch: commit
